@@ -5,7 +5,8 @@ include 'functions.php';
 include 'router.php';
 
 
-class Database {
+class Database
+{
   public function query($query)
   {
     $dsn = "mysql:host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4";
@@ -17,8 +18,7 @@ class Database {
     $statement = $pdo->prepare("select * from posts");
     $statement->execute();
 
-   return $statement->fetchAll(PDO::FETCH_ASSOC);
-
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
   }
 }
 
