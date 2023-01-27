@@ -2,4 +2,4 @@
 
 $heading = 'Home';
 
-include "views/index.view.php";
+require "views/index.view.php";

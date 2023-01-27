@@ -6,7 +6,7 @@ function dd($value)
     var_dump($value);
     echo "</pre>";
 
-    // die();
+    die();
 }
 
 function urlIs($value)

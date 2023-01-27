@@ -1,32 +1,15 @@
 <?php
 
-include 'functions.php';
+require 'functions.php';
 
-include 'router.php';
+require 'router.php';
 
+require 'Database.php';
 
-class Database
-{
-  public function query($query)
-  {
-    $dsn = "mysql:host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4";
+$config = require('config.php');
 
+$db = new Database($config['database']);
 
-    $pdo = new PDO($dsn);
+$posts = $db->query("select * from posts")->fetchAll();
 
-
-    $statement = $pdo->prepare("select * from posts");
-    $statement->execute();
-
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-  }
-}
-
-// $db = new Database();
-// $db->query("select * from posts");
-
-// $posts = $db->query("select * from posts");
-
-// foreach ($posts as $post) {
-//   echo "<li>" . $post['title'] . "</li>";
-// }
+dd($posts);

@@ -12,7 +12,7 @@ $routes = [
 function routeToController($uri, $routes)
 {
   if (array_key_exists($uri, $routes)) {
-    include $routes[$uri];
+    require $routes[$uri];
   } else {
     abort();
   }
@@ -23,7 +23,7 @@ function abort($code = 404)
 {
   http_response_code(404);
 
-  include 'views/{$code}.php';
+  require 'views/{$code}.php';
 
   die();
 }

@@ -2,4 +2,4 @@
 
 $heading = 'About Us';
 
-include "views/about.view.php";
+require "views/about.view.php";
