@@ -1,6 +1,7 @@
 <?php
 
-$heading = 'Contact Us';
+namespace Core;
 
-require "views/contact.view.php";
- 
+view("contact.view.php", [
+    'heading' => 'Contact Us'
+]);
