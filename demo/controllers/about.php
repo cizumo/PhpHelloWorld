@@ -1,5 +1,7 @@
 <?php
 
-$heading = 'About Us';
+namespace Core;
 
-include "views/about.view.php";
+view("about.view.php", [
+    'heading' => 'About Us',
+]);
